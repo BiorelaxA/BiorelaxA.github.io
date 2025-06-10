@@ -2,7 +2,6 @@
   {
     "grouping": "Languages, Operating Systems & Tools",
     "skills": [
-      "Cplusplus",
       "Rust",
       "Java",
       "Python",
@@ -10,17 +9,6 @@
       "linux",
       "bash",
       "javascript"
-    ]
-  },
-  {
-    "grouping": "Platform Development & Administration",
-    "skills": [
-      "NGINX",
-      "MySQL",
-      {
-        "name": "Slurm",
-        "icon": "bash"
-      }
     ]
   },
   {
@@ -32,35 +20,6 @@
       },
       {
         "name": "Sqlite",
-        "icon": "bash"
-      }
-    ]
-  },
-  {
-    "grouping": "Architecture",
-    "skills": [
-      {
-        "name": "IP Networking",
-        "icon": "bash"
-      },
-      {
-        "name": "DNS",
-        "icon": "bash"
-      },
-      {
-        "name": "Firewalls",
-        "icon": "bash"
-      },
-      {
-        "name": "Load Balancing",
-        "icon": "bash"
-      },
-      {
-        "name": "Microservices",
-        "icon": "bash"
-      },
-      {
-        "name": "RESTful APIs",
         "icon": "bash"
       }
     ]
