@@ -17,7 +17,7 @@ jobs:
           GITHUB_PAT: ${{ github.token }}
           REPO: "getzola/zola"
           VERSION: "0.18.0"
-          MATCH: "zola-0\\.18\\.0.+-x86_64-unknown-linux-gnu.tar.gz$"
+          MATCH: 'zola-0\.18\.0.+-x86_64-unknown-linux-gnu.tar.gz$'
           RENAME: "zola.tgz"
         shell: bash
         run: |
