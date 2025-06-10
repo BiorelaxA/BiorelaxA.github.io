@@ -12,38 +12,37 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
-      - name: Install Zola 0.18.0
+      - name: build
         env:
           GITHUB_PAT: ${{ github.token }}
           REPO: "getzola/zola"
-          VERSION: "0.18.0"  # Specific version
-          MATCH: 'zola-0\.18\.0-x86_64-unknown-linux-gnu\.tar\.gz$'  # Exact version match
+          VERSION: "v0.18.0"
+          MATCH: "zola-.+-x86_64-unknown-linux-gnu.tar.gz$"
           RENAME: "zola.tgz"
         shell: bash
         run: |
-          # Get download URL for exact version
           curl -sL --fail \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${GITHUB_PAT}" \
-            "https://api.github.com/repos/${REPO}/releases/tags/v${VERSION}" \
-            | jq -r '.assets[] | select(.name | test("zola-0\\.18\\.0-x86_64-unknown-linux-gnu\\.tar\\.gz$")) | .url' \
-            | tee asset.url
-          
-          # Download the specific version
+              "https://api.github.com/repos/${REPO}/releases/${VERSION}" \
+              | jq -r ".assets | .[] | select(.name | test(\"${MATCH}\")) | .url" \
+              | tee asset.url
           curl -sL --fail \
             -H "Accept: application/octet-stream" \
             -H "Authorization: Bearer ${GITHUB_PAT}" \
-            -o "${RENAME}" \
-            "$(cat asset.url)"
-          
-          # Extract and make executable
+              -o "${RENAME}" \
+              "$(cat asset.url)"
           tar -zxvf zola.tgz
           chmod +x zola
-          ./zola --version  # Verify version
-          
-      - name: Build site
-        run: ./zola build
-        
+          ./zola build
+      # - name: build search
+      #   uses: addnab/docker-run-action@v3
+      #   with:
+      #     image: tinysearch/cli
+      #     options: -v ${{ github.workspace }}:/tmp
+      #     run: tinysearch -p /tmp/public /tmp/public/json/index.html
+      # - name: post build
+      #   run: rm public/.gitignore
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
