@@ -1,9 +1,9 @@
 name = "resume"
 description = "A resume theme"
 license = "MIT"
-homepage = "https://github.com/alongwy/zola-resume"
+homepage = "https://github.com/Biorelaxa"
 min_version = "0.11.0"
-demo = "https://resume.alongwy.top"
+demo = "https://biorelaxa.github.io/"
 
 compile_sass = true
 generate_feeds = true
@@ -13,10 +13,10 @@ taxonomies = [
 ]
 
 [extra]
-first_name = "Feng"
-last_name = "Yunlong"
+first_name = "Shen"
+last_name = "Hongyu"
 address = "Harbin, China"
-email = "ylfeng@ir.hit.edu.cn"
+email = "peterluck2021@163.com"
 favicon = "/favicon.ico"
 avatar = "/media/avatar.png"
 
