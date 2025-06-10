@@ -25,7 +25,7 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${GITHUB_PAT}" \
               "https://api.github.com/repos/${REPO}/releases/tags/${VERSION}" \
-              | jq -r ".assets | .[] | select(.name | test(\"${MATCH}\")) | .url" \
+              | jq -r --arg MATCH "${MATCH}" '.assets | .[] | select(.name | test($MATCH)) | .url' \
               | tee asset.url
           curl -sL --fail \
             -H "Accept: application/octet-stream" \
@@ -35,14 +35,6 @@ jobs:
           tar -zxvf zola.tgz
           chmod +x zola
           ./zola build
-      # - name: build search
-      #   uses: addnab/docker-run-action@v3
-      #   with:
-      #     image: tinysearch/cli
-      #     options: -v ${{ github.workspace }}:/tmp
-      #     run: tinysearch -p /tmp/public /tmp/public/json/index.html
-      # - name: post build
-      #   run: rm public/.gitignore
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
