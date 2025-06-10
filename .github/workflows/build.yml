@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_PAT: ${{ github.token }}
           REPO: "getzola/zola"
-          VERSION: "v0.18.0"
+          VERSION: "latest"
           MATCH: "zola-.+-x86_64-unknown-linux-gnu.tar.gz$"
           RENAME: "zola.tgz"
         shell: bash
@@ -24,7 +24,7 @@ jobs:
           curl -sL --fail \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${GITHUB_PAT}" \
-              "https://api.github.com/repos/getzola/zola/releases/v0.18.0" \
+              "https://api.github.com/repos/${REPO}/releases/${VERSION}" \
               | jq -r ".assets | .[] | select(.name | test(\"${MATCH}\")) | .url" \
               | tee asset.url
           curl -sL --fail \
