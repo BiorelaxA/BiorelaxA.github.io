@@ -12,33 +12,42 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
-      - name: build
+      - name: Install Zola 0.18.0
         env:
           GITHUB_PAT: ${{ github.token }}
           REPO: "getzola/zola"
-          VERSION: "0.18.0"
-          MATCH: 'zola-0\.18\.0.+-x86_64-unknown-linux-gnu.tar.gz$'
+          VERSION: "0.18.0"  # Specific version
+          MATCH: 'zola-0\.18\.0-x86_64-unknown-linux-gnu\.tar\.gz$'  # Exact version match
           RENAME: "zola.tgz"
         shell: bash
         run: |
+          # Get download URL for exact version
           curl -sL --fail \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${GITHUB_PAT}" \
-              "https://api.github.com/repos/${REPO}/releases/tags/${VERSION}" \
-              | jq -r --arg MATCH "${MATCH}" '.assets | .[] | select(.name | test($MATCH)) | .url' \
-              | tee asset.url
+            "https://api.github.com/repos/${REPO}/releases/tags/v${VERSION}" \
+            | jq -r '.assets[] | select(.name | test("zola-0\\.18\\.0-x86_64-unknown-linux-gnu\\.tar\\.gz$")) | .url' \
+            | tee asset.url
+          
+          # Download the specific version
           curl -sL --fail \
             -H "Accept: application/octet-stream" \
             -H "Authorization: Bearer ${GITHUB_PAT}" \
-              -o "${RENAME}" \
-              "$(cat asset.url)"
+            -o "${RENAME}" \
+            "$(cat asset.url)"
+          
+          # Extract and make executable
           tar -zxvf zola.tgz
           chmod +x zola
-          ./zola build
+          ./zola --version  # Verify version
+          
+      - name: Build site
+        run: ./zola build
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          cname: resume.alongwy.top
+          cname: resume.shy.top
