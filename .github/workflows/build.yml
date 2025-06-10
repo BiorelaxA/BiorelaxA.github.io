@@ -1,57 +1,52 @@
-name: Deploy website to Pages
+name: Build
+
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: [$default-branch]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
-# Default to bash
-defaults:
-  run:
-    shell: bash
+    branches:
+      - main
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      ZOLA_VERSION: 0.18.0
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Install Zola
+      - uses: actions/checkout@v2
+      - name: build
+        env:
+          GITHUB_PAT: ${{ github.token }}
+          REPO: "getzola/zola"
+          VERSION: "latest"
+          MATCH: "zola-.+-x86_64-unknown-linux-gnu.tar.gz$"
+          RENAME: "zola.tgz"
+        shell: bash
         run: |
-          curl -sL https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-      - name: Build with Zola
-        run: zola build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./public
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+          curl -sL --fail \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${GITHUB_PAT}" \
+              "https://api.github.com/repos/${REPO}/releases/${VERSION}" \
+              | jq -r ".assets | .[] | select(.name | test(\"${MATCH}\")) | .url" \
+              | tee asset.url
+          curl -sL --fail \
+            -H "Accept: application/octet-stream" \
+            -H "Authorization: Bearer ${GITHUB_PAT}" \
+              -o "${RENAME}" \
+              "$(cat asset.url)"
+          tar -zxvf zola.tgz
+          chmod +x zola
+          ./zola build
+      # - name: build search
+      #   uses: addnab/docker-run-action@v3
+      #   with:
+      #     image: tinysearch/cli
+      #     options: -v ${{ github.workspace }}:/tmp
+      #     run: tinysearch -p /tmp/public /tmp/public/json/index.html
+      # - name: post build
+      #   run: rm public/.gitignore
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: resume.alongwy.top
