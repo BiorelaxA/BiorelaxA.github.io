@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Shen - Python</title>
+      <link>https://resume.shy.top</link>
+      <description>A clean resume theme</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://resume.shy.top/tags/python/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sat, 28 Aug 2021 15:00:30 +0000</lastBuildDate>
+      <item>
+          <title>Based on LLM to judge student learning state</title>
+          <pubDate>Sat, 28 Aug 2021 15:00:30 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://resume.shy.top/projects/edueducation/</link>
+          <guid>https://resume.shy.top/projects/edueducation/</guid>
+          <description xml:base="https://resume.shy.top/projects/edueducation/">&lt;h2 id=&quot;xiang-mu-ming-cheng&quot;&gt;项目名称&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;EduExtension-HIT&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;yun-xing-tiao-jian&quot;&gt;运行条件&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目前还在开发中，这里列出当前配置&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue3相关组件安装&lt;&#x2F;li&gt;
+&lt;li&gt;Django相关框架组件安装&lt;&#x2F;li&gt;
+&lt;li&gt;Python3.9以上&lt;&#x2F;li&gt;
+&lt;li&gt;LangChain,Spacy,Faiss,LTP相关组件安装&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;yun-xing-shuo-ming&quot;&gt;运行说明&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当前只能以开发者模式运行&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;进入后端目录，运行&lt;code&gt;python manage.py runserver&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;进入前端目录，运行&lt;code&gt;npm run serve&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;浏览器访问&lt;code&gt;http:&#x2F;&#x2F;localhost:8080&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;管理员账号：admin， 密码：0&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;ji-shu-jia-gou&quot;&gt;技术架构&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vue3 + BootStrap + Django + Langchain + Spacy + Faiss + Python&amp;gt;=3.9&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前端部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;任何页面的外观与ui设计&lt;&#x2F;li&gt;
+&lt;li&gt;所有后端函数的前端调用&lt;&#x2F;li&gt;
+&lt;li&gt;sidepanel页面时间选取展示&lt;&#x2F;li&gt;
+&lt;li&gt;历史记录页面完成&lt;&#x2F;li&gt;
+&lt;li&gt;PreInstall页面完成&lt;&#x2F;li&gt;
+&lt;li&gt;前端加一个markdown显示器(important)&lt;&#x2F;li&gt;
+&lt;li&gt;判题部分若干&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;后端部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;动态获取取bilibili网站的cookie（或者在绕过SESSDATA的前提下获得字幕信息？）&lt;&#x2F;li&gt;
+&lt;li&gt;views.py相关函数的完成&lt;&#x2F;li&gt;
+&lt;li&gt;爬虫相关&lt;&#x2F;li&gt;
+&lt;li&gt;任何流程的实现逻辑设计&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接口部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;api.js下相关接口的完成&lt;&#x2F;li&gt;
+&lt;li&gt;模型与后端功能接口完成（可以使用工厂模式）&lt;&#x2F;li&gt;
+&lt;li&gt;有关密钥部分（api-key）等隐私内容传输的适配&lt;&#x2F;li&gt;
+&lt;li&gt;csrf相关&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;模型相关&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;星火大模型适配&lt;&#x2F;li&gt;
+&lt;li&gt;活字大模型适配&lt;&#x2F;li&gt;
+&lt;li&gt;Prompt自强化&lt;&#x2F;li&gt;
+&lt;li&gt;流式问答&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据库部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;neo4j图数据库&lt;&#x2F;li&gt;
+&lt;li&gt;Prompt数据库&lt;&#x2F;li&gt;
+&lt;li&gt;数据库的分页和滚动加载&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;实际产品功能测试与反馈&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+    </channel>
+</rss>

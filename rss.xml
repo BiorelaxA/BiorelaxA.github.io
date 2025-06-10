@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Shen</title>
+      <link>https://resume.shy.top</link>
+      <description>A clean resume theme</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://resume.shy.top/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 28 Apr 2025 11:35:41 +0000</lastBuildDate>
+      <item>
+          <title>smoltcp support RTO</title>
+          <pubDate>Mon, 28 Apr 2025 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://resume.shy.top/opensource/smoltcp/</link>
+          <guid>https://resume.shy.top/opensource/smoltcp/</guid>
+          <description xml:base="https://resume.shy.top/opensource/smoltcp/">&lt;h2 id=&quot;examplesbenchmarkrs&quot;&gt;examplesbenchmarkrs&lt;&#x2F;h2&gt;
+&lt;h1 id=&quot;smoltcp&quot;&gt;smoltcp&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.rs&#x2F;smoltcp&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;docs.rs&#x2F;smoltcp&#x2F;badge.svg&quot; alt=&quot;docs.rs&quot; &#x2F;&gt;&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;smoltcp&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;crates&#x2F;v&#x2F;smoltcp.svg&quot; alt=&quot;crates.io&quot; &#x2F;&gt;&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;smoltcp&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;crates&#x2F;d&#x2F;smoltcp.svg&quot; alt=&quot;crates.io&quot; &#x2F;&gt;&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;matrix.to&#x2F;#&#x2F;#smoltcp:matrix.org&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;matrix&#x2F;smoltcp:matrix.org&quot; alt=&quot;crates.io&quot; &#x2F;&gt;&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;codecov.io&#x2F;github&#x2F;smoltcp-rs&#x2F;smoltcp&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;codecov.io&#x2F;github&#x2F;smoltcp-rs&#x2F;smoltcp&#x2F;branch&#x2F;master&#x2F;graph&#x2F;badge.svg?token=3KbAR9xH1t&quot; alt=&quot;codecov&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;smoltcp&lt;&#x2F;em&gt; is a standalone, event-driven TCP&#x2F;IP stack that is designed for bare-metal,
+real-time systems. Its design goals are simplicity and robustness. Its design anti-goals
+include complicated compile-time computations, such as macro or type tricks, even
+at cost of performance degradation.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;smoltcp&lt;&#x2F;em&gt; does not need heap allocation &lt;em&gt;at all&lt;&#x2F;em&gt;, is &lt;a href=&quot;https:&#x2F;&#x2F;docs.rs&#x2F;smoltcp&#x2F;&quot;&gt;extensively documented&lt;&#x2F;a&gt;,
+and compiles on stable Rust 1.65 and later.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;smoltcp&lt;&#x2F;em&gt; achieves &lt;a href=&quot;https:&#x2F;&#x2F;resume.shy.top&#x2F;opensource&#x2F;smoltcp&#x2F;#examplesbenchmarkrs&quot;&gt;~Gbps of throughput&lt;&#x2F;a&gt; when tested against
+the Linux TCP stack in loopback mode.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;smoltcp&lt;&#x2F;em&gt; is missing many widely deployed features, usually because no one implemented them yet.
+To set expectations right, both implemented and omitted features are listed.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;media-layer&quot;&gt;Media layer&lt;&#x2F;h3&gt;
+&lt;p&gt;There are 3 supported mediums.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ethernet
+&lt;ul&gt;
+&lt;li&gt;Regular Ethernet II frames are supported.&lt;&#x2F;li&gt;
+&lt;li&gt;Unicast, broadcast and multicast packets are supported.&lt;&#x2F;li&gt;
+&lt;li&gt;ARP packets (including gratuitous requests and replies) are supported.&lt;&#x2F;li&gt;
+&lt;li&gt;ARP requests are sent at a rate not exceeding one per second.&lt;&#x2F;li&gt;
+&lt;li&gt;Cached ARP entries expire after one minute.&lt;&#x2F;li&gt;
+&lt;li&gt;802.3 frames and 802.1Q are &lt;strong&gt;not&lt;&#x2F;strong&gt; supported.&lt;&#x2F;li&gt;
+&lt;li&gt;Jumbo frames are &lt;strong&gt;not&lt;&#x2F;strong&gt; supported.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;IP
+&lt;ul&gt;
+&lt;li&gt;Unicast, broadcast and multicast packets are supported.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;IEEE 802.15.4
+&lt;ul&gt;
+&lt;li&gt;Only support for data frames.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;ip-layer&quot;&gt;IP layer&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;ipv4&quot;&gt;IPv4&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;IPv4 header checksum is generated and validated.&lt;&#x2F;li&gt;
+&lt;li&gt;IPv4 time-to-live value is configurable per socket, set to 64 by default.&lt;&#x2F;li&gt;
+&lt;li&gt;IPv4 default gateway is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;Routing outgoing IPv4 packets is supported, through a default gateway or a CIDR route table.&lt;&#x2F;li&gt;
+&lt;li&gt;IPv4 fragmentation and reassembly is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;IPv4 options are &lt;strong&gt;not&lt;&#x2F;strong&gt; supported and are silently ignored.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;ipv6&quot;&gt;IPv6&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;IPv6 hop-limit value is configurable per socket, set to 64 by default.&lt;&#x2F;li&gt;
+&lt;li&gt;Routing outgoing IPv6 packets is supported, through a default gateway or a CIDR route table.&lt;&#x2F;li&gt;
+&lt;li&gt;IPv6 hop-by-hop header is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv6 parameter problem message is generated in response to an unrecognized IPv6 next header.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv6 parameter problem message is &lt;strong&gt;not&lt;&#x2F;strong&gt; generated in response to an unknown IPv6
+hop-by-hop option.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;6lowpan&quot;&gt;6LoWPAN&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Implementation of &lt;a href=&quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;rfc&#x2F;rfc6282.txt&quot;&gt;RFC6282&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Fragmentation is supported, as defined in &lt;a href=&quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;rfc&#x2F;rfc4944.txt&quot;&gt;RFC4944&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;UDP header compression&#x2F;decompression is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;Extension header compression&#x2F;decompression is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;Uncompressed IPv6 Extension Headers are &lt;strong&gt;not&lt;&#x2F;strong&gt; supported.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;ip-multicast&quot;&gt;IP multicast&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;igmp&quot;&gt;IGMP&lt;&#x2F;h4&gt;
+&lt;p&gt;The IGMPv1 and IGMPv2 protocols are supported, and IPv4 multicast is available.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Membership reports are sent in response to membership queries at
+equal intervals equal to the maximum response time divided by the
+number of groups to be reported.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;icmp-layer&quot;&gt;ICMP layer&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;icmpv4&quot;&gt;ICMPv4&lt;&#x2F;h4&gt;
+&lt;p&gt;The ICMPv4 protocol is supported, and ICMP sockets are available.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ICMPv4 header checksum is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv4 echo replies are generated in response to echo requests.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMP sockets can listen to ICMPv4 Port Unreachable messages, or any ICMPv4 messages with
+a given IPv4 identifier field.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv4 protocol unreachable messages are &lt;strong&gt;not&lt;&#x2F;strong&gt; passed to higher layers when received.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv4 parameter problem messages are &lt;strong&gt;not&lt;&#x2F;strong&gt; generated.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;icmpv6&quot;&gt;ICMPv6&lt;&#x2F;h4&gt;
+&lt;p&gt;The ICMPv6 protocol is supported, and ICMP sockets are available.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ICMPv6 header checksum is supported.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv6 echo replies are generated in response to echo requests.&lt;&#x2F;li&gt;
+&lt;li&gt;ICMPv6 protocol unreachable messages are &lt;strong&gt;not&lt;&#x2F;strong&gt; passed to higher layers when received.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;ndisc&quot;&gt;NDISC&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Neighbor Advertisement messages are generated in response to Neighbor Solicitations.&lt;&#x2F;li&gt;
+&lt;li&gt;Router Advertisement messages are &lt;strong&gt;not&lt;&#x2F;strong&gt; generated or read.&lt;&#x2F;li&gt;
+&lt;li&gt;Router Solicitation messages are &lt;strong&gt;not&lt;&#x2F;strong&gt; generated or read.&lt;&#x2F;li&gt;
+&lt;li&gt;Redirected Header messages are &lt;strong&gt;not&lt;&#x2F;strong&gt; generated or read.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;udp-layer&quot;&gt;UDP layer&lt;&#x2F;h3&gt;
+&lt;p&gt;The UDP protocol is supported over IPv4 and IPv6, and UDP sockets are available.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Header checksum is always generated and validated.&lt;&#x2F;li&gt;
+&lt;li&gt;In response to a packet arriving at a port without a listening socket,
+an ICMP destination unreachable message is generated.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;tcp-layer&quot;&gt;TCP layer&lt;&#x2F;h3&gt;
+&lt;p&gt;The TCP protocol is supported over IPv4 and IPv6, and server and client TCP sockets are available.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Header checksum is generated and validated.&lt;&#x2F;li&gt;
+&lt;li&gt;Maximum segment size is negotiated.&lt;&#x2F;li&gt;
+&lt;li&gt;Window scaling is negotiated.&lt;&#x2F;li&gt;
+&lt;li&gt;Multiple packets are transmitted without waiting for an acknowledgement.&lt;&#x2F;li&gt;
+&lt;li&gt;Reassembly of out-of-order segments is supported, with no more than 4 or 32 gaps in sequence space.&lt;&#x2F;li&gt;
+&lt;li&gt;Keep-alive packets may be sent at a configurable interval.&lt;&#x2F;li&gt;
+&lt;li&gt;Retransmission timeout starts at at an estimate of RTT, and doubles every time.&lt;&#x2F;li&gt;
+&lt;li&gt;Time-wait timeout has a fixed interval of 10 s.&lt;&#x2F;li&gt;
+&lt;li&gt;User timeout has a configurable interval.&lt;&#x2F;li&gt;
+&lt;li&gt;Delayed acknowledgements are supported, with configurable delay.&lt;&#x2F;li&gt;
+&lt;li&gt;Nagle&#x27;s algorithm is implemented.&lt;&#x2F;li&gt;
+&lt;li&gt;Selective acknowledgements are &lt;strong&gt;not&lt;&#x2F;strong&gt; implemented.&lt;&#x2F;li&gt;
+&lt;li&gt;Silly window syndrome avoidance is &lt;strong&gt;not&lt;&#x2F;strong&gt; implemented.&lt;&#x2F;li&gt;
+&lt;li&gt;Congestion control is &lt;strong&gt;not&lt;&#x2F;strong&gt; implemented.&lt;&#x2F;li&gt;
+&lt;li&gt;Timestamping is &lt;strong&gt;not&lt;&#x2F;strong&gt; supported.&lt;&#x2F;li&gt;
+&lt;li&gt;Urgent pointer is &lt;strong&gt;ignored&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Probing Zero Windows is &lt;strong&gt;not&lt;&#x2F;strong&gt; implemented.&lt;&#x2F;li&gt;
+&lt;li&gt;Packetization Layer Path MTU Discovery &lt;a href=&quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;rfc&#x2F;rfc4821.txt&quot;&gt;PLPMTU&lt;&#x2F;a&gt; is &lt;strong&gt;not&lt;&#x2F;strong&gt; implemented.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;&#x2F;h2&gt;
+&lt;p&gt;To use the &lt;em&gt;smoltcp&lt;&#x2F;em&gt; library in your project, add the following to &lt;code&gt;Cargo.toml&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[dependencies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;smoltcp &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#50a14f;&quot;&gt;&amp;quot;0.10.0&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The default configuration assumes a hosted environment, for ease of evaluation.
+You probably want to disable default features and configure them one by one:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[dependencies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;smoltcp &lt;&#x2F;span&gt;&lt;span&gt;= { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;version &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#50a14f;&quot;&gt;&amp;quot;0.10.0&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;default-features &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c18401;&quot;&gt;false&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;features &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#50a14f;&quot;&gt;&amp;quot;log&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;] }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;feature-flags&quot;&gt;Feature flags&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;feature-std&quot;&gt;Feature &lt;code&gt;std&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;std&lt;&#x2F;code&gt; feature enables use of objects and slices owned by the networking stack through a
+dependency on &lt;code&gt;std::boxed::Box&lt;&#x2F;code&gt; and &lt;code&gt;std::vec::Vec&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This feature is enabled by default.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;feature-alloc&quot;&gt;Feature &lt;code&gt;alloc&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;alloc&lt;&#x2F;code&gt; feature enables use of objects owned by the networking stack through a dependency
+on collections from the &lt;code&gt;alloc&lt;&#x2F;code&gt; crate. This only works on nightly rustc.&lt;&#x2F;p&gt;
+&lt;p&gt;This feature is disabled by default.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;feature-log&quot;&gt;Feature &lt;code&gt;log&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;log&lt;&#x2F;code&gt; feature enables logging of events within the networking stack through
+the &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;log&quot;&gt;log crate&lt;&#x2F;a&gt;. Normal events (e.g. buffer level or TCP state changes) are emitted with
+the TRACE log level. Exceptional events (e.g. malformed packets) are emitted with
+the DEBUG log level.&lt;&#x2F;p&gt;
+&lt;p&gt;This feature is enabled by default.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;feature-defmt&quot;&gt;Feature &lt;code&gt;defmt&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;defmt&lt;&#x2F;code&gt; feature enables logging of events with the &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;defmt&quot;&gt;defmt crate&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This feature is disabled by default, and cannot be used at the same time as &lt;code&gt;log&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;feature-verbose&quot;&gt;Feature &lt;code&gt;verbose&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;verbose&lt;&#x2F;code&gt; feature enables logging of events where the logging itself may incur very high
+overhead. For example, emitting a log line every time an application reads or writes as little
+as 1 octet from a socket is likely to overwhelm the application logic unless a &lt;code&gt;BufReader&lt;&#x2F;code&gt;
+or &lt;code&gt;BufWriter&lt;&#x2F;code&gt; is used, which are of course not available on heap-less systems.&lt;&#x2F;p&gt;
+&lt;p&gt;This feature is disabled by default.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;features-phy-raw-socket-and-phy-tuntap-interface&quot;&gt;Features &lt;code&gt;phy-raw_socket&lt;&#x2F;code&gt; and &lt;code&gt;phy-tuntap_interface&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Enable &lt;code&gt;smoltcp::phy::RawSocket&lt;&#x2F;code&gt; and &lt;code&gt;smoltcp::phy::TunTapInterface&lt;&#x2F;code&gt;, respectively.&lt;&#x2F;p&gt;
+&lt;p&gt;These features are enabled by default.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;features-socket-raw-socket-udp-socket-tcp-socket-icmp-socket-dhcpv4-socket-dns&quot;&gt;Features &lt;code&gt;socket-raw&lt;&#x2F;code&gt;, &lt;code&gt;socket-udp&lt;&#x2F;code&gt;, &lt;code&gt;socket-tcp&lt;&#x2F;code&gt;, &lt;code&gt;socket-icmp&lt;&#x2F;code&gt;, &lt;code&gt;socket-dhcpv4&lt;&#x2F;code&gt;, &lt;code&gt;socket-dns&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Enable the corresponding socket type.&lt;&#x2F;p&gt;
+&lt;p&gt;These features are enabled by default.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;features-proto-ipv4-proto-ipv6-and-proto-sixlowpan&quot;&gt;Features &lt;code&gt;proto-ipv4&lt;&#x2F;code&gt;, &lt;code&gt;proto-ipv6&lt;&#x2F;code&gt; and &lt;code&gt;proto-sixlowpan&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Enable &lt;a href=&quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;rfc&#x2F;rfc791.txt&quot;&gt;IPv4&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;rfc&#x2F;rfc8200.txt&quot;&gt;IPv6&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;rfc&#x2F;rfc6282.txt&quot;&gt;6LoWPAN&lt;&#x2F;a&gt; respectively.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Based on LLM to judge student learning state</title>
+          <pubDate>Sat, 28 Aug 2021 15:00:30 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://resume.shy.top/projects/edueducation/</link>
+          <guid>https://resume.shy.top/projects/edueducation/</guid>
+          <description xml:base="https://resume.shy.top/projects/edueducation/">&lt;h2 id=&quot;xiang-mu-ming-cheng&quot;&gt;项目名称&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;EduExtension-HIT&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;yun-xing-tiao-jian&quot;&gt;运行条件&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目前还在开发中，这里列出当前配置&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue3相关组件安装&lt;&#x2F;li&gt;
+&lt;li&gt;Django相关框架组件安装&lt;&#x2F;li&gt;
+&lt;li&gt;Python3.9以上&lt;&#x2F;li&gt;
+&lt;li&gt;LangChain,Spacy,Faiss,LTP相关组件安装&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;yun-xing-shuo-ming&quot;&gt;运行说明&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当前只能以开发者模式运行&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;进入后端目录，运行&lt;code&gt;python manage.py runserver&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;进入前端目录，运行&lt;code&gt;npm run serve&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;浏览器访问&lt;code&gt;http:&#x2F;&#x2F;localhost:8080&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;管理员账号：admin， 密码：0&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;ji-shu-jia-gou&quot;&gt;技术架构&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vue3 + BootStrap + Django + Langchain + Spacy + Faiss + Python&amp;gt;=3.9&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前端部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;任何页面的外观与ui设计&lt;&#x2F;li&gt;
+&lt;li&gt;所有后端函数的前端调用&lt;&#x2F;li&gt;
+&lt;li&gt;sidepanel页面时间选取展示&lt;&#x2F;li&gt;
+&lt;li&gt;历史记录页面完成&lt;&#x2F;li&gt;
+&lt;li&gt;PreInstall页面完成&lt;&#x2F;li&gt;
+&lt;li&gt;前端加一个markdown显示器(important)&lt;&#x2F;li&gt;
+&lt;li&gt;判题部分若干&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;后端部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;动态获取取bilibili网站的cookie（或者在绕过SESSDATA的前提下获得字幕信息？）&lt;&#x2F;li&gt;
+&lt;li&gt;views.py相关函数的完成&lt;&#x2F;li&gt;
+&lt;li&gt;爬虫相关&lt;&#x2F;li&gt;
+&lt;li&gt;任何流程的实现逻辑设计&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接口部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;api.js下相关接口的完成&lt;&#x2F;li&gt;
+&lt;li&gt;模型与后端功能接口完成（可以使用工厂模式）&lt;&#x2F;li&gt;
+&lt;li&gt;有关密钥部分（api-key）等隐私内容传输的适配&lt;&#x2F;li&gt;
+&lt;li&gt;csrf相关&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;模型相关&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;星火大模型适配&lt;&#x2F;li&gt;
+&lt;li&gt;活字大模型适配&lt;&#x2F;li&gt;
+&lt;li&gt;Prompt自强化&lt;&#x2F;li&gt;
+&lt;li&gt;流式问答&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据库部分&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;neo4j图数据库&lt;&#x2F;li&gt;
+&lt;li&gt;Prompt数据库&lt;&#x2F;li&gt;
+&lt;li&gt;数据库的分页和滚动加载&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;实际产品功能测试与反馈&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>RocketOS</title>
+          <pubDate>Sat, 28 Aug 2021 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://resume.shy.top/projects/rocketos/</link>
+          <guid>https://resume.shy.top/projects/rocketos/</guid>
+          <description xml:base="https://resume.shy.top/projects/rocketos/">&lt;p align=&quot;center&quot;&gt;RocketOS - Rust RISC-V Operating System&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;
+RocketOS is a simple operating system which is written in RUST and Assembly.
+&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a title=&quot;Rustc Version&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;&lt;img alt=&quot;Rustc Version&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;Rustc-%3E%3D%201.82.0-orange?style=flat&quot;&gt;&lt;&#x2F;a&gt;
+  &lt;a title=&quot;License&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;blob&#x2F;main&#x2F;LICENSE&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;license&#x2F;li041&#x2F;RROS.svg?style=flat&quot;&gt;&lt;&#x2F;a&gt;
+  &lt;br&gt;
+  &lt;a title=&quot;GitHub Release&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;releases&quot;&gt;&lt;img alt=&quot;GitHub Release&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;v&#x2F;release&#x2F;li041&#x2F;RROS?style=flat&quot;&gt;&lt;&#x2F;a&gt;
+  &lt;a title=&quot;GitHub Commits&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;commits&#x2F;main&quot;&gt;&lt;img alt=&quot;GitHub Commits&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;commit-activity&#x2F;m&#x2F;li041&#x2F;RROS.svg?style=flat&amp;color=brightgreen&amp;label=commits&quot;&gt;&lt;&#x2F;a&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;a title=&quot;GitHub Watchers&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;watchers&quot;&gt;&lt;img alt=&quot;GitHub Watchers&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;watchers&#x2F;li041&#x2F;RROS.svg?label=Watchers&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
+  &lt;a title=&quot;GitHub Stars&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;stargazers&quot;&gt;&lt;img alt=&quot;GitHub Stars&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;stars&#x2F;li041&#x2F;RROS.svg?label=Stars&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
+  &lt;a title=&quot;GitHub Forks&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;network&#x2F;members&quot;&gt;&lt;img alt=&quot;GitHub Forks&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;forks&#x2F;li041&#x2F;RROS.svg?label=Forks&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
+&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dart-quick-start&quot;&gt;🎯 Quick Start&lt;&#x2F;h2&gt;
+&lt;p&gt;To get started with RROS, follow the steps below:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Clone the repository&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS.git
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#0184bc;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; RROS
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0a1a7;&quot;&gt;##Make sure you have Rust 1.82.0 or higher installed:
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;curl --proto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#50a14f;&quot;&gt;&amp;#39;=https&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; --tlsv1&lt;&#x2F;span&gt;&lt;span&gt;.2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; -sSf&lt;&#x2F;span&gt;&lt;span&gt; https:&#x2F;&#x2F;sh.rustup.rs &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a626a4;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;sh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;rustup&lt;&#x2F;span&gt;&lt;span&gt; update stable
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;strong&gt;Build the OS&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; build&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; --release
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Run in QEMU&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;You can test RROS in the QEMU emulator:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;qemu-system-riscv64 -machine&lt;&#x2F;span&gt;&lt;span&gt; virt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; -nographic -kernel&lt;&#x2F;span&gt;&lt;span&gt; target&#x2F;riscv64gc-unknown-none-elf&#x2F;release&#x2F;rros
+&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;Make&lt;&#x2F;span&gt;&lt;span&gt; sure you have QEMU installed and configured to support RISC-V)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;package-features&quot;&gt;📦 Features&lt;&#x2F;h2&gt;
+&lt;p&gt;Minimal RISC-V operating system kernel written in Rust and Assembly&lt;&#x2F;p&gt;
+&lt;p&gt;Basic hardware initialization and interrupt handling&lt;&#x2F;p&gt;
+&lt;p&gt;Memory management with page tables&lt;&#x2F;p&gt;
+&lt;p&gt;Simple scheduler and multitasking support&lt;&#x2F;p&gt;
+&lt;p&gt;Support for RISC-V privileged architecture&lt;&#x2F;p&gt;
+&lt;p&gt;Modular design for easy extension and experimentation&lt;&#x2F;p&gt;
+&lt;p&gt;Early-stage file system and device driver prototypes (work in progress)&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
