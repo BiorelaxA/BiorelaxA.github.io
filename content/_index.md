@@ -10,4 +10,7 @@ title: "About"
 - 🐯 My GitHub [Overview](https://github.com/BiorelaxA) 
 
 [![Stat](https://github-readme-stats.vercel.app/api?username=BiorelaxA&count_private=true&show_icons=true&line_height=20&theme=default)](https://github.com/BiorelaxA)
-[![Top-Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=BiorelaxA&layout=compact&hide=HTML,PostScript&theme=default_repocard)](https://github.com/BiorelaxA)
+[![Top-Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=BiorelaxA&layout=compact&hide=HTML,PostScript&theme=default_repocard)]
+
+[![Total Commits](https://img.shields.io/endpoint?url=https://BiorelaxA.github.io/<repo>/stats.json&label=Commits&field=commits)](https://github.com/BiorelaxA)
+[![Total PRs](https://img.shields.io/endpoint?url=https://BiorelaxA.github.io/<repo>/stats.json&label=PRs&field=prs)](https://github.com/BiorelaxA)
