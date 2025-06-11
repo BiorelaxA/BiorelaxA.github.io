@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://biorelaxa.github.io/sitemap.xml
