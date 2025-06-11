@@ -12,5 +12,5 @@ title: "About"
 [![Stat](https://github-readme-stats.vercel.app/api?username=BiorelaxA&count_private=true&show_icons=true&line_height=20&theme=default)](https://github.com/BiorelaxA)
 [![Top-Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=BiorelaxA&layout=compact&hide=HTML,PostScript&theme=default_repocard)]
 
-[![Total Commits](https://img.shields.io/endpoint?url=https://BiorelaxA.github.io/commits-badge.json)](https://github.com/BiorelaxA)
-[![Total PRs](https://img.shields.io/endpoint?url=https://BiorelaxA.github.io/prs-badge.json)](https://github.com/BiorelaxA)
+[![Total Commits](https://img.shields.io/endpoint?url=https://biorelaxa.github.io/commits-badge.json)](https://github.com/BiorelaxA)
+[![Total PRs](https://img.shields.io/endpoint?url=https://biorelaxA.github.io/prs-badge.json)](https://github.com/BiorelaxA)
