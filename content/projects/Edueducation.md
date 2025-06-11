@@ -1,6 +1,6 @@
 ---
 title: "Based on LLM to judge student learning state"
-date: 2021-08-28T15:00:30.183Z
+date: 2023-08-28T15:00:30.183Z
 extra:
   link: https://github.com/BiorelaxA/EduExtension-HIT
 description: 📊 A browser plug-in that can be used to monitor the user's learning status

@@ -1,6 +1,6 @@
 ---
 title: RocketOS
-date: 2021-08-28T11:35:41.496Z
+date: 2025-02-11T11:35:41.496Z
 extra:
   featured: true
   link: https://github.com/BiorelaxA/RocketOS
