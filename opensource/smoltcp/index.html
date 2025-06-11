@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>Shen</title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://biorelaxa.github.io/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://biorelaxa.github.io/elasticlunr.min.js" defer></script>
+
+<script src="https://biorelaxa.github.io/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://biorelaxa.github.io/rss.xml">
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://biorelaxa.github.io/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://biorelaxa.github.io/#anchor_about">ABOUT</a></li>   
+
+ 
+<li data-menuanchor="skills"><a href="https://biorelaxa.github.io/#anchor_skills">SKILLS</a></li>
+
+
+<li data-menuanchor="projects"><a href="https://biorelaxa.github.io/#anchor_projects">PROJECTS</a></li>
+
+ 
+<li data-menuanchor="opensource"><a href="https://biorelaxa.github.io/#anchor_opensource">OPEN SOURCE</a></li>
+
+
+<li data-menuanchor="publications"><a href="https://biorelaxa.github.io/#anchor_publications">PUBLICATIONS</a></li>
+
+ 
+<li data-menuanchor="experience"><a href="https://biorelaxa.github.io/#anchor_experience">EXPERIENCE</a></li>
+
+ 
+<li data-menuanchor="education"><a href="https://biorelaxa.github.io/#anchor_education">EDUCATION</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://biorelaxa.github.io/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>smoltcp support RTO<a href="https:&#x2F;&#x2F;github.com&#x2F;BiorelaxA&#x2F;smoltcp" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <h2 id="examplesbenchmarkrs">examplesbenchmarkrs</h2>
+<h1 id="smoltcp">smoltcp</h1>
+<p><a href="https://docs.rs/smoltcp"><img src="https://docs.rs/smoltcp/badge.svg" alt="docs.rs" /></a>
+<a href="https://crates.io/crates/smoltcp"><img src="https://img.shields.io/crates/v/smoltcp.svg" alt="crates.io" /></a>
+<a href="https://crates.io/crates/smoltcp"><img src="https://img.shields.io/crates/d/smoltcp.svg" alt="crates.io" /></a>
+<a href="https://matrix.to/#/#smoltcp:matrix.org"><img src="https://img.shields.io/matrix/smoltcp:matrix.org" alt="crates.io" /></a>
+<a href="https://codecov.io/github/smoltcp-rs/smoltcp"><img src="https://codecov.io/github/smoltcp-rs/smoltcp/branch/master/graph/badge.svg?token=3KbAR9xH1t" alt="codecov" /></a></p>
+<p><em>smoltcp</em> is a standalone, event-driven TCP/IP stack that is designed for bare-metal,
+real-time systems. Its design goals are simplicity and robustness. Its design anti-goals
+include complicated compile-time computations, such as macro or type tricks, even
+at cost of performance degradation.</p>
+<p><em>smoltcp</em> does not need heap allocation <em>at all</em>, is <a href="https://docs.rs/smoltcp/">extensively documented</a>,
+and compiles on stable Rust 1.65 and later.</p>
+<p><em>smoltcp</em> achieves <a href="https://biorelaxa.github.io/opensource/smoltcp/#examplesbenchmarkrs">~Gbps of throughput</a> when tested against
+the Linux TCP stack in loopback mode.</p>
+<h2 id="features">Features</h2>
+<p><em>smoltcp</em> is missing many widely deployed features, usually because no one implemented them yet.
+To set expectations right, both implemented and omitted features are listed.</p>
+<h3 id="media-layer">Media layer</h3>
+<p>There are 3 supported mediums.</p>
+<ul>
+<li>Ethernet
+<ul>
+<li>Regular Ethernet II frames are supported.</li>
+<li>Unicast, broadcast and multicast packets are supported.</li>
+<li>ARP packets (including gratuitous requests and replies) are supported.</li>
+<li>ARP requests are sent at a rate not exceeding one per second.</li>
+<li>Cached ARP entries expire after one minute.</li>
+<li>802.3 frames and 802.1Q are <strong>not</strong> supported.</li>
+<li>Jumbo frames are <strong>not</strong> supported.</li>
+</ul>
+</li>
+<li>IP
+<ul>
+<li>Unicast, broadcast and multicast packets are supported.</li>
+</ul>
+</li>
+<li>IEEE 802.15.4
+<ul>
+<li>Only support for data frames.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ip-layer">IP layer</h3>
+<h4 id="ipv4">IPv4</h4>
+<ul>
+<li>IPv4 header checksum is generated and validated.</li>
+<li>IPv4 time-to-live value is configurable per socket, set to 64 by default.</li>
+<li>IPv4 default gateway is supported.</li>
+<li>Routing outgoing IPv4 packets is supported, through a default gateway or a CIDR route table.</li>
+<li>IPv4 fragmentation and reassembly is supported.</li>
+<li>IPv4 options are <strong>not</strong> supported and are silently ignored.</li>
+</ul>
+<h4 id="ipv6">IPv6</h4>
+<ul>
+<li>IPv6 hop-limit value is configurable per socket, set to 64 by default.</li>
+<li>Routing outgoing IPv6 packets is supported, through a default gateway or a CIDR route table.</li>
+<li>IPv6 hop-by-hop header is supported.</li>
+<li>ICMPv6 parameter problem message is generated in response to an unrecognized IPv6 next header.</li>
+<li>ICMPv6 parameter problem message is <strong>not</strong> generated in response to an unknown IPv6
+hop-by-hop option.</li>
+</ul>
+<h4 id="6lowpan">6LoWPAN</h4>
+<ul>
+<li>Implementation of <a href="https://tools.ietf.org/rfc/rfc6282.txt">RFC6282</a>.</li>
+<li>Fragmentation is supported, as defined in <a href="https://tools.ietf.org/rfc/rfc4944.txt">RFC4944</a>.</li>
+<li>UDP header compression/decompression is supported.</li>
+<li>Extension header compression/decompression is supported.</li>
+<li>Uncompressed IPv6 Extension Headers are <strong>not</strong> supported.</li>
+</ul>
+<h3 id="ip-multicast">IP multicast</h3>
+<h4 id="igmp">IGMP</h4>
+<p>The IGMPv1 and IGMPv2 protocols are supported, and IPv4 multicast is available.</p>
+<ul>
+<li>Membership reports are sent in response to membership queries at
+equal intervals equal to the maximum response time divided by the
+number of groups to be reported.</li>
+</ul>
+<h3 id="icmp-layer">ICMP layer</h3>
+<h4 id="icmpv4">ICMPv4</h4>
+<p>The ICMPv4 protocol is supported, and ICMP sockets are available.</p>
+<ul>
+<li>ICMPv4 header checksum is supported.</li>
+<li>ICMPv4 echo replies are generated in response to echo requests.</li>
+<li>ICMP sockets can listen to ICMPv4 Port Unreachable messages, or any ICMPv4 messages with
+a given IPv4 identifier field.</li>
+<li>ICMPv4 protocol unreachable messages are <strong>not</strong> passed to higher layers when received.</li>
+<li>ICMPv4 parameter problem messages are <strong>not</strong> generated.</li>
+</ul>
+<h4 id="icmpv6">ICMPv6</h4>
+<p>The ICMPv6 protocol is supported, and ICMP sockets are available.</p>
+<ul>
+<li>ICMPv6 header checksum is supported.</li>
+<li>ICMPv6 echo replies are generated in response to echo requests.</li>
+<li>ICMPv6 protocol unreachable messages are <strong>not</strong> passed to higher layers when received.</li>
+</ul>
+<h4 id="ndisc">NDISC</h4>
+<ul>
+<li>Neighbor Advertisement messages are generated in response to Neighbor Solicitations.</li>
+<li>Router Advertisement messages are <strong>not</strong> generated or read.</li>
+<li>Router Solicitation messages are <strong>not</strong> generated or read.</li>
+<li>Redirected Header messages are <strong>not</strong> generated or read.</li>
+</ul>
+<h3 id="udp-layer">UDP layer</h3>
+<p>The UDP protocol is supported over IPv4 and IPv6, and UDP sockets are available.</p>
+<ul>
+<li>Header checksum is always generated and validated.</li>
+<li>In response to a packet arriving at a port without a listening socket,
+an ICMP destination unreachable message is generated.</li>
+</ul>
+<h3 id="tcp-layer">TCP layer</h3>
+<p>The TCP protocol is supported over IPv4 and IPv6, and server and client TCP sockets are available.</p>
+<ul>
+<li>Header checksum is generated and validated.</li>
+<li>Maximum segment size is negotiated.</li>
+<li>Window scaling is negotiated.</li>
+<li>Multiple packets are transmitted without waiting for an acknowledgement.</li>
+<li>Reassembly of out-of-order segments is supported, with no more than 4 or 32 gaps in sequence space.</li>
+<li>Keep-alive packets may be sent at a configurable interval.</li>
+<li>Retransmission timeout starts at at an estimate of RTT, and doubles every time.</li>
+<li>Time-wait timeout has a fixed interval of 10 s.</li>
+<li>User timeout has a configurable interval.</li>
+<li>Delayed acknowledgements are supported, with configurable delay.</li>
+<li>Nagle's algorithm is implemented.</li>
+<li>Selective acknowledgements are <strong>not</strong> implemented.</li>
+<li>Silly window syndrome avoidance is <strong>not</strong> implemented.</li>
+<li>Congestion control is <strong>not</strong> implemented.</li>
+<li>Timestamping is <strong>not</strong> supported.</li>
+<li>Urgent pointer is <strong>ignored</strong>.</li>
+<li>Probing Zero Windows is <strong>not</strong> implemented.</li>
+<li>Packetization Layer Path MTU Discovery <a href="https://tools.ietf.org/rfc/rfc4821.txt">PLPMTU</a> is <strong>not</strong> implemented.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>To use the <em>smoltcp</em> library in your project, add the following to <code>Cargo.toml</code>:</p>
+<pre data-lang="toml" style="background-color:#fafafa;color:#383a42;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[dependencies]
+</span><span style="color:#e45649;">smoltcp </span><span>= </span><span style="color:#50a14f;">&quot;0.10.0&quot;
+</span></code></pre>
+<p>The default configuration assumes a hosted environment, for ease of evaluation.
+You probably want to disable default features and configure them one by one:</p>
+<pre data-lang="toml" style="background-color:#fafafa;color:#383a42;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[dependencies]
+</span><span style="color:#e45649;">smoltcp </span><span>= { </span><span style="color:#e45649;">version </span><span>= </span><span style="color:#50a14f;">&quot;0.10.0&quot;</span><span>, </span><span style="color:#e45649;">default-features </span><span>= </span><span style="color:#c18401;">false</span><span>, </span><span style="color:#e45649;">features </span><span>= [</span><span style="color:#50a14f;">&quot;log&quot;</span><span>] }
+</span></code></pre>
+<h2 id="feature-flags">Feature flags</h2>
+<h3 id="feature-std">Feature <code>std</code></h3>
+<p>The <code>std</code> feature enables use of objects and slices owned by the networking stack through a
+dependency on <code>std::boxed::Box</code> and <code>std::vec::Vec</code>.</p>
+<p>This feature is enabled by default.</p>
+<h3 id="feature-alloc">Feature <code>alloc</code></h3>
+<p>The <code>alloc</code> feature enables use of objects owned by the networking stack through a dependency
+on collections from the <code>alloc</code> crate. This only works on nightly rustc.</p>
+<p>This feature is disabled by default.</p>
+<h3 id="feature-log">Feature <code>log</code></h3>
+<p>The <code>log</code> feature enables logging of events within the networking stack through
+the <a href="https://crates.io/crates/log">log crate</a>. Normal events (e.g. buffer level or TCP state changes) are emitted with
+the TRACE log level. Exceptional events (e.g. malformed packets) are emitted with
+the DEBUG log level.</p>
+<p>This feature is enabled by default.</p>
+<h3 id="feature-defmt">Feature <code>defmt</code></h3>
+<p>The <code>defmt</code> feature enables logging of events with the <a href="https://crates.io/crates/defmt">defmt crate</a>.</p>
+<p>This feature is disabled by default, and cannot be used at the same time as <code>log</code>.</p>
+<h3 id="feature-verbose">Feature <code>verbose</code></h3>
+<p>The <code>verbose</code> feature enables logging of events where the logging itself may incur very high
+overhead. For example, emitting a log line every time an application reads or writes as little
+as 1 octet from a socket is likely to overwhelm the application logic unless a <code>BufReader</code>
+or <code>BufWriter</code> is used, which are of course not available on heap-less systems.</p>
+<p>This feature is disabled by default.</p>
+<h3 id="features-phy-raw-socket-and-phy-tuntap-interface">Features <code>phy-raw_socket</code> and <code>phy-tuntap_interface</code></h3>
+<p>Enable <code>smoltcp::phy::RawSocket</code> and <code>smoltcp::phy::TunTapInterface</code>, respectively.</p>
+<p>These features are enabled by default.</p>
+<h3 id="features-socket-raw-socket-udp-socket-tcp-socket-icmp-socket-dhcpv4-socket-dns">Features <code>socket-raw</code>, <code>socket-udp</code>, <code>socket-tcp</code>, <code>socket-icmp</code>, <code>socket-dhcpv4</code>, <code>socket-dns</code></h3>
+<p>Enable the corresponding socket type.</p>
+<p>These features are enabled by default.</p>
+<h3 id="features-proto-ipv4-proto-ipv6-and-proto-sixlowpan">Features <code>proto-ipv4</code>, <code>proto-ipv6</code> and <code>proto-sixlowpan</code></h3>
+<p>Enable <a href="https://tools.ietf.org/rfc/rfc791.txt">IPv4</a>, <a href="https://tools.ietf.org/rfc/rfc8200.txt">IPv6</a> and <a href="https://tools.ietf.org/rfc/rfc6282.txt">6LoWPAN</a> respectively.</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_skills',        
+             'anchor_projects',      
+             'anchor_opensource',    
+             'anchor_publications',  
+             'anchor_experience',    
+             'anchor_education',     
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>Shen</title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://biorelaxa.github.io/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://biorelaxa.github.io/elasticlunr.min.js" defer></script>
+
+<script src="https://biorelaxa.github.io/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://biorelaxa.github.io/rss.xml">
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://biorelaxa.github.io/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://biorelaxa.github.io/#anchor_about">ABOUT</a></li>   
+
+ 
+<li data-menuanchor="skills"><a href="https://biorelaxa.github.io/#anchor_skills">SKILLS</a></li>
+
+
+<li data-menuanchor="projects"><a href="https://biorelaxa.github.io/#anchor_projects">PROJECTS</a></li>
+
+ 
+<li data-menuanchor="opensource"><a href="https://biorelaxa.github.io/#anchor_opensource">OPEN SOURCE</a></li>
+
+
+<li data-menuanchor="publications"><a href="https://biorelaxa.github.io/#anchor_publications">PUBLICATIONS</a></li>
+
+ 
+<li data-menuanchor="experience"><a href="https://biorelaxa.github.io/#anchor_experience">EXPERIENCE</a></li>
+
+ 
+<li data-menuanchor="education"><a href="https://biorelaxa.github.io/#anchor_education">EDUCATION</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://biorelaxa.github.io/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>RocketOS<a href="https:&#x2F;&#x2F;github.com&#x2F;BiorelaxA&#x2F;RocketOS" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <p align="center">RocketOS - Rust RISC-V Operating System</p>
+<p align="center">
+RocketOS is a simple operating system which is written in RUST and Assembly.
+</p>
+<p align="center">
+  <a title="Rustc Version" target="_blank" href="https://www.rust-lang.org/"><img alt="Rustc Version" src="https://img.shields.io/badge/Rustc-%3E%3D%201.82.0-orange?style=flat"></a>
+  <a title="License" target="_blank" href="https://github.com/li041/RROS/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/li041/RROS.svg?style=flat"></a>
+  <br>
+  <a title="GitHub Release" target="_blank" href="https://github.com/li041/RROS/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/li041/RROS?style=flat"></a>
+  <a title="GitHub Commits" target="_blank" href="https://github.com/li041/RROS/commits/main"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/li041/RROS.svg?style=flat&color=brightgreen&label=commits"></a>
+  <br><br>
+  <a title="GitHub Watchers" target="_blank" href="https://github.com/li041/RROS/watchers"><img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/li041/RROS.svg?label=Watchers&style=social"></a>  
+  <a title="GitHub Stars" target="_blank" href="https://github.com/li041/RROS/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/li041/RROS.svg?label=Stars&style=social"></a>  
+  <a title="GitHub Forks" target="_blank" href="https://github.com/li041/RROS/network/members"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/li041/RROS.svg?label=Forks&style=social"></a>  
+</p>
+<h2 id="dart-quick-start">🎯 Quick Start</h2>
+<p>To get started with RROS, follow the steps below:</p>
+<ol>
+<li><strong>Clone the repository</strong></li>
+</ol>
+<pre data-lang="bash" style="background-color:#fafafa;color:#383a42;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e45649;">git</span><span> clone https://github.com/li041/RROS.git
+</span><span style="color:#0184bc;">cd</span><span> RROS
+</span><span style="color:#a0a1a7;">##Make sure you have Rust 1.82.0 or higher installed:
+</span><span style="color:#e45649;">curl --proto </span><span style="color:#50a14f;">&#39;=https&#39;</span><span style="color:#e45649;"> --tlsv1</span><span>.2</span><span style="color:#e45649;"> -sSf</span><span> https://sh.rustup.rs </span><span style="color:#a626a4;">| </span><span style="color:#e45649;">sh
+</span><span style="color:#e45649;">rustup</span><span> update stable
+</span></code></pre>
+<ol start="2">
+<li><strong>Build the OS</strong></li>
+</ol>
+<pre data-lang="bash" style="background-color:#fafafa;color:#383a42;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e45649;">cargo</span><span> build</span><span style="color:#e45649;"> --release
+</span></code></pre>
+<ol start="3">
+<li>Run in QEMU</li>
+</ol>
+<p>You can test RROS in the QEMU emulator:</p>
+<pre data-lang="bash" style="background-color:#fafafa;color:#383a42;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e45649;">qemu-system-riscv64 -machine</span><span> virt</span><span style="color:#e45649;"> -nographic -kernel</span><span> target/riscv64gc-unknown-none-elf/release/rros
+</span><span>(</span><span style="color:#e45649;">Make</span><span> sure you have QEMU installed and configured to support RISC-V)
+</span></code></pre>
+<h2 id="package-features">📦 Features</h2>
+<p>Minimal RISC-V operating system kernel written in Rust and Assembly</p>
+<p>Basic hardware initialization and interrupt handling</p>
+<p>Memory management with page tables</p>
+<p>Simple scheduler and multitasking support</p>
+<p>Support for RISC-V privileged architecture</p>
+<p>Modular design for easy extension and experimentation</p>
+<p>Early-stage file system and device driver prototypes (work in progress)</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_skills',        
+             'anchor_projects',      
+             'anchor_opensource',    
+             'anchor_publications',  
+             'anchor_experience',    
+             'anchor_education',     
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>
