@@ -4,11 +4,7 @@ date: 2025-02-11T11:35:41.496Z
 extra:
   featured: true
   link: https://github.com/BiorelaxA/RocketOS
-<<<<<<< HEAD
-description: "RocketOS 是一个支持 **RISC-V** 与 **LoongArch** 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、VirtIO 设备等内容。"
-=======
 description: "RocketOS 是一个支持 **RISC-V** 与 **LoongArch** 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、网络、VirtIO 设备等内容。"
->>>>>>> d41df101a81777421af9c0be6a7b8cdde8c11123
 taxonomies:
   tags:
     - Rust
