@@ -4,12 +4,7 @@ date: 2025-02-11T11:35:41.496Z
 extra:
   featured: true
   link: https://github.com/BiorelaxA/RocketOS
-description: "An open-source neural language technology platform supporting
-  six   fundamental Chinese NLP tasks: <ul>   <li>lexical analysis (Chinese word
-  segmentation,   part-of-speech tagging, and named entity
-  recognition)</li>   <li>syntactic parsing   (dependency
-  parsing)</li>   <li>semantic parsing (semantic dependency parsing
-  and   semantic role labeling)</li> </ul>"
+description: "RocketOS 是一个支持 **RISC-V** 与 **LoongArch** 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、VirtIO 设备等内容。"
 taxonomies:
   tags:
     - Rust
@@ -33,45 +28,80 @@ RocketOS is a simple operating system which is written in RUST and Assembly.
   <a title="GitHub Forks" target="_blank" href="https://github.com/li041/RROS/network/members"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/li041/RROS.svg?label=Forks&style=social"></a>  
 </p>
 
-## 🎯 Quick Start
+# 🚀 RocketOS
+RocketOS 是一个支持 **RISC-V** 与 **LoongArch** 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、VirtIO 设备等内容。
 
-To get started with RROS, follow the steps below:
+## 📦 项目结构
 
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/li041/RROS.git
-cd RROS
-##Make sure you have Rust 1.82.0 or higher installed:
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup update stable
 ```
-   
-2. **Build the OS**
-
-```bash
-cargo build --release
-```
-3. Run in QEMU
-
-You can test RROS in the QEMU emulator:
-
-```bash
-qemu-system-riscv64 -machine virt -nographic -kernel target/riscv64gc-unknown-none-elf/release/rros
-(Make sure you have QEMU installed and configured to support RISC-V)
+.
+├── LICENSE
+├── Makefile
+├── README.md
+├── bootloader
+│   ├── opensbi-qemu
+│   └── opensbi-qemu.bin
+├── img
+├── os
+│   ├── src
+│   └── vendor
+└── user
+    ├── src
+    └── vendor
 ```
 
-## 📦 Features
-Minimal RISC-V operating system kernel written in Rust and Assembly
+## 🛠️ 构建方式
 
-Basic hardware initialization and interrupt handling
+默认会同时构建 RISC-V 和 LoongArch 的内核和用户程序：
 
-Memory management with page tables
+```bash
+make all
+```
 
-Simple scheduler and multitasking support
+构建过程将：
 
-Support for RISC-V privileged architecture
+* 解压磁盘镜像
+* 构建 RISC-V 和 LoongArch 架构的用户态与内核程序
+* 生成 `kernel-rv` 和 `kernel-la` 两个内核镜像
 
-Modular design for easy extension and experimentation
+## 🚀 启动系统
 
-Early-stage file system and device driver prototypes (work in progress)
+### 启动 RISC-V 模拟器：
+
+```bash
+make run-riscv
+```
+
+### 启动 LoongArch 模拟器：
+
+```bash
+make run-loongarch
+```
+
+## 🐞 调试支持
+支持通过 gdb 进行调试：
+
+```bash
+make gdbserver    # 启动 QEMU 并开启 GDB 服务
+make gdbclient    # 启动 GDB 客户端
+```
+
+## 🧹 清理构建文件
+
+```bash
+make clean
+```
+
+---
+
+## ✨ 注意事项
+
+* 需要安装 QEMU，且支持 `qemu-system-riscv64` 和 `qemu-system-loongarch64`。
+* 使用了 `virtio` 设备和多磁盘模拟，请确保 QEMU 版本足够新。
+* 需要支持交叉编译工具链，如 `riscv64-linux-musl-gcc` 与 `loongarch64-linux-musl-gcc`。
+
+---
+
+欢迎学习和修改本项目，用于教学、研究和实验操作系统开发 🚀
+
+---
