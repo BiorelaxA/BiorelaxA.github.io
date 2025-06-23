@@ -211,37 +211,75 @@ RocketOS is a simple operating system which is written in RUST and Assembly.
   &lt;a title=&quot;GitHub Stars&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;stargazers&quot;&gt;&lt;img alt=&quot;GitHub Stars&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;stars&#x2F;li041&#x2F;RROS.svg?label=Stars&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
   &lt;a title=&quot;GitHub Forks&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;network&#x2F;members&quot;&gt;&lt;img alt=&quot;GitHub Forks&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;forks&#x2F;li041&#x2F;RROS.svg?label=Forks&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
 &lt;&#x2F;p&gt;
-&lt;h2 id=&quot;dart-quick-start&quot;&gt;🎯 Quick Start&lt;&#x2F;h2&gt;
-&lt;p&gt;To get started with RROS, follow the steps below:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Clone the repository&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS.git
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#0184bc;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; RROS
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0a1a7;&quot;&gt;##Make sure you have Rust 1.82.0 or higher installed:
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;curl --proto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#50a14f;&quot;&gt;&amp;#39;=https&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; --tlsv1&lt;&#x2F;span&gt;&lt;span&gt;.2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; -sSf&lt;&#x2F;span&gt;&lt;span&gt; https:&#x2F;&#x2F;sh.rustup.rs &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a626a4;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;sh
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;rustup&lt;&#x2F;span&gt;&lt;span&gt; update stable
+&lt;h1 id=&quot;rocket-rocketos&quot;&gt;🚀 RocketOS&lt;&#x2F;h1&gt;
+&lt;p&gt;RocketOS 是一个支持 &lt;strong&gt;RISC-V&lt;&#x2F;strong&gt; 与 &lt;strong&gt;LoongArch&lt;&#x2F;strong&gt; 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、VirtIO 设备等内容。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;package-xiang-mu-jie-gou&quot;&gt;📦 项目结构&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#fafafa;color:#383a42;&quot;&gt;&lt;code&gt;&lt;span&gt;.
+&lt;&#x2F;span&gt;&lt;span&gt;├── LICENSE
+&lt;&#x2F;span&gt;&lt;span&gt;├── Makefile
+&lt;&#x2F;span&gt;&lt;span&gt;├── README.md
+&lt;&#x2F;span&gt;&lt;span&gt;├── bootloader
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── opensbi-qemu
+&lt;&#x2F;span&gt;&lt;span&gt;│   └── opensbi-qemu.bin
+&lt;&#x2F;span&gt;&lt;span&gt;├── img
+&lt;&#x2F;span&gt;&lt;span&gt;├── os
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── src
+&lt;&#x2F;span&gt;&lt;span&gt;│   └── vendor
+&lt;&#x2F;span&gt;&lt;span&gt;└── user
+&lt;&#x2F;span&gt;&lt;span&gt;    ├── src
+&lt;&#x2F;span&gt;&lt;span&gt;    └── vendor
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;&lt;strong&gt;Build the OS&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; build&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; --release
+&lt;h2 id=&quot;tools-gou-jian-fang-shi&quot;&gt;🛠️ 构建方式&lt;&#x2F;h2&gt;
+&lt;p&gt;默认会同时构建 RISC-V 和 LoongArch 的内核和用户程序：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; all
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;Run in QEMU&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;p&gt;You can test RROS in the QEMU emulator:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;qemu-system-riscv64 -machine&lt;&#x2F;span&gt;&lt;span&gt; virt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt; -nographic -kernel&lt;&#x2F;span&gt;&lt;span&gt; target&#x2F;riscv64gc-unknown-none-elf&#x2F;release&#x2F;rros
-&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;Make&lt;&#x2F;span&gt;&lt;span&gt; sure you have QEMU installed and configured to support RISC-V)
+&lt;p&gt;构建过程将：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;解压磁盘镜像&lt;&#x2F;li&gt;
+&lt;li&gt;构建 RISC-V 和 LoongArch 架构的用户态与内核程序&lt;&#x2F;li&gt;
+&lt;li&gt;生成 &lt;code&gt;kernel-rv&lt;&#x2F;code&gt; 和 &lt;code&gt;kernel-la&lt;&#x2F;code&gt; 两个内核镜像&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;rocket-qi-dong-xi-tong&quot;&gt;🚀 启动系统&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;qi-dong-risc-v-mo-ni-qi&quot;&gt;启动 RISC-V 模拟器：&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; run-riscv
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;package-features&quot;&gt;📦 Features&lt;&#x2F;h2&gt;
-&lt;p&gt;Minimal RISC-V operating system kernel written in Rust and Assembly&lt;&#x2F;p&gt;
-&lt;p&gt;Basic hardware initialization and interrupt handling&lt;&#x2F;p&gt;
-&lt;p&gt;Memory management with page tables&lt;&#x2F;p&gt;
-&lt;p&gt;Simple scheduler and multitasking support&lt;&#x2F;p&gt;
-&lt;p&gt;Support for RISC-V privileged architecture&lt;&#x2F;p&gt;
-&lt;p&gt;Modular design for easy extension and experimentation&lt;&#x2F;p&gt;
-&lt;p&gt;Early-stage file system and device driver prototypes (work in progress)&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;qi-dong-loongarch-mo-ni-qi&quot;&gt;启动 LoongArch 模拟器：&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; run-loongarch
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;beetle-diao-shi-zhi-chi&quot;&gt;🐞 调试支持&lt;&#x2F;h2&gt;
+&lt;p&gt;支持通过 gdb 进行调试：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; gdbserver    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0a1a7;&quot;&gt;# 启动 QEMU 并开启 GDB 服务
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; gdbclient    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0a1a7;&quot;&gt;# 启动 GDB 客户端
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;broom-qing-li-gou-jian-wen-jian&quot;&gt;🧹 清理构建文件&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; clean
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;sparkles-zhu-yi-shi-xiang&quot;&gt;✨ 注意事项&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;需要安装 QEMU，且支持 &lt;code&gt;qemu-system-riscv64&lt;&#x2F;code&gt; 和 &lt;code&gt;qemu-system-loongarch64&lt;&#x2F;code&gt;。&lt;&#x2F;li&gt;
+&lt;li&gt;使用了 &lt;code&gt;virtio&lt;&#x2F;code&gt; 设备和多磁盘模拟，请确保 QEMU 版本足够新。&lt;&#x2F;li&gt;
+&lt;li&gt;需要支持交叉编译工具链，如 &lt;code&gt;riscv64-linux-musl-gcc&lt;&#x2F;code&gt; 与 &lt;code&gt;loongarch64-linux-musl-gcc&lt;&#x2F;code&gt;。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;欢迎学习和修改本项目，用于教学、研究和实验操作系统开发 🚀&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;head&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;&quot;&gt;=======&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;d41df101a81777421af9c0be6a7b8cdde8c11123&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
 </description>
       </item>
     </channel>
