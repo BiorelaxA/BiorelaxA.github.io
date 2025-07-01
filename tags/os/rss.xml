@@ -196,24 +196,36 @@ or &lt;code&gt;BufWriter&lt;&#x2F;code&gt; is used, which are of course not avai
           <author>Unknown</author>
           <link>https://biorelaxa.github.io/projects/rocketos/</link>
           <guid>https://biorelaxa.github.io/projects/rocketos/</guid>
-          <description xml:base="https://biorelaxa.github.io/projects/rocketos/">&lt;p align=&quot;center&quot;&gt;RocketOS - Rust RISC-V Operating System&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;
-RocketOS is a simple operating system which is written in RUST and Assembly.
-&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a title=&quot;Rustc Version&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;&lt;img alt=&quot;Rustc Version&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;badge&#x2F;Rustc-%3E%3D%201.82.0-orange?style=flat&quot;&gt;&lt;&#x2F;a&gt;
-  &lt;a title=&quot;License&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;blob&#x2F;main&#x2F;LICENSE&quot;&gt;&lt;img alt=&quot;License&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;license&#x2F;li041&#x2F;RROS.svg?style=flat&quot;&gt;&lt;&#x2F;a&gt;
-  &lt;br&gt;
-  &lt;a title=&quot;GitHub Release&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;releases&quot;&gt;&lt;img alt=&quot;GitHub Release&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;v&#x2F;release&#x2F;li041&#x2F;RROS?style=flat&quot;&gt;&lt;&#x2F;a&gt;
-  &lt;a title=&quot;GitHub Commits&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;commits&#x2F;main&quot;&gt;&lt;img alt=&quot;GitHub Commits&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;commit-activity&#x2F;m&#x2F;li041&#x2F;RROS.svg?style=flat&amp;color=brightgreen&amp;label=commits&quot;&gt;&lt;&#x2F;a&gt;
-  &lt;br&gt;&lt;br&gt;
-  &lt;a title=&quot;GitHub Watchers&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;watchers&quot;&gt;&lt;img alt=&quot;GitHub Watchers&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;watchers&#x2F;li041&#x2F;RROS.svg?label=Watchers&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
-  &lt;a title=&quot;GitHub Stars&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;stargazers&quot;&gt;&lt;img alt=&quot;GitHub Stars&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;stars&#x2F;li041&#x2F;RROS.svg?label=Stars&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
-  &lt;a title=&quot;GitHub Forks&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RROS&#x2F;network&#x2F;members&quot;&gt;&lt;img alt=&quot;GitHub Forks&quot; src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;forks&#x2F;li041&#x2F;RROS.svg?label=Forks&amp;style=social&quot;&gt;&lt;&#x2F;a&gt;  
-&lt;&#x2F;p&gt;
+          <description xml:base="https://biorelaxa.github.io/projects/rocketos/">&lt;h2 id=&quot;alt-text&quot;&gt;&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;hit.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;h2&gt;
 &lt;h1 id=&quot;rocket-rocketos&quot;&gt;🚀 RocketOS&lt;&#x2F;h1&gt;
-&lt;p&gt;RocketOS 是一个支持 &lt;strong&gt;RISC-V&lt;&#x2F;strong&gt; 与 &lt;strong&gt;LoongArch&lt;&#x2F;strong&gt; 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、VirtIO 设备等内容。&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;package-xiang-mu-jie-gou&quot;&gt;📦 项目结构&lt;&#x2F;h2&gt;
+&lt;p&gt;RocketOS 是一款采用 Rust 语言开发的现代化宏内核操作系统，支持 &lt;strong&gt;RISC-V&lt;&#x2F;strong&gt; 和 &lt;strong&gt;LoongArch&lt;&#x2F;strong&gt; 架构。该系统从最小内核开始开发，采用同步栈式设计架构，集成了完整的中断处理机制、进程管理系统、内存管理模块、文件系统以及网络协议栈等核心组件，通过系统调用接口为用户程序提供高效可靠的服务支持&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;chu-sai-cheng-ji&quot;&gt;初赛成绩&lt;&#x2F;h1&gt;
+&lt;p&gt;截至2025-6-30日20点，RocketOS通过除ltp外全部测试点，在实时排行榜中处于榜首，总分共计11720.05
+&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;score1.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;
+&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;score2.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;rocketos-nei-he-she-ji&quot;&gt;RocketOS 内核设计&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;RocketOS.drawio.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;he-xin-gong-neng-shi-xian&quot;&gt;&lt;strong&gt;核心功能实现：&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;内存管理：&lt;&#x2F;strong&gt; 提供高效的内存分配和虚拟内存管理机制，采用写时复制（Copy-on-Write）与懒分配（Lazy Allocation）的优化策略，最大化内存资源利用效率，确保系统内存访问的高性能表现&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;文件系统：&lt;&#x2F;strong&gt; 支持多种文件操作和目录管理功能，全面兼容ext4、FAT32等多种主流文件系统格式，构建了完善的VFS（虚拟文件系统）抽象层，提供统一的文件系统接口，实现跨文件系统的透明访问和高效管理&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;信号机制：&lt;&#x2F;strong&gt; 支持进程间的信号传递和处理，提供毫秒级实时信号响应和异步事件通知功能，严格遵循POSIX标准规范，保障进程间通信的高可靠性和兼容性&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;进程管理：&lt;&#x2F;strong&gt; 支持多任务调度和进程间通信，采用FIFO（先进先出）调度算法，在保证系统实时性的同时提供卓越的可靠性，确保任务执行的确定性和可预测性&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;网络协议栈：&lt;&#x2F;strong&gt; 支持完整的TCP&#x2F;IP协议族和基础网络通信功能，实现标准化的网络分层架构，提供高性能套接字接口和优化的网络数据包处理机制，确保网络数据传输的稳定性和高效性&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;架构适配：&lt;&#x2F;strong&gt; 支持RISC-V与LoongArch两种主流处理器架构，采用统一的核心源代码框架实现系统核心功能，通过精细化条件编译机制进行架构特定的局部优化调整，确保跨平台的高效移植和性能一致性&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;rocketoshe-xin-jing-zheng-you-shi&quot;&gt;RocketOS核心竞争优势&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;注意： 性能测试结果与测评环境及服务器负载相关，以下数据仅供参考。&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;1. 系统兼容性与稳定性&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;通过较为充分的LTP测例验证，包括功能性测试、边界条件测试和异常处理测试，RocketOS高度符合POSIX标准，确保与Linux应用程序的良好兼容性。系统具备健壮的错误处理机制和优秀的资源管理能力，为应用运行提供可靠保障。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;2. 文件I&#x2F;O性能领先&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;在iozone基准测试中拥有优异成绩，得益于智能页缓存机制有效减少磁盘访问次数，显著提升文件系统吞吐量。同时，优化的存储驱动与硬件深度协同，实现了卓越的I&#x2F;O性能表现。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;3.综合性能卓越&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;在lmbench综合性能测试中夺得总分第一，libcbench测试中位居前列，所有性能测试总分第一，充分体现了系统底层的全方位精细优化成果。&lt;&#x2F;p&gt;
+&lt;p&gt;关键优化包括：execve时的按需加载机制和只读段页缓存共享、匿名映射区域的预测分配策略、基于架构保留页表位的高效共享&#x2F;私有映射实现，以及采用哈希桶管理的futex快速锁机制，有效分散热点并提升并发性能。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;4.实时调度性能突出&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;在cyclictest实时性能测试中斩获总分第一，展现了极低的调度延迟和高效的任务切换能力。采用同步调度机制结合任务上下文栈内保存技术，显著降低切换开销，为高并发和实时应用提供强有力支撑。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;xiang-mu-zhu-yao-jie-gou&quot;&gt;项目主要结构&lt;&#x2F;h2&gt;
 &lt;pre style=&quot;background-color:#fafafa;color:#383a42;&quot;&gt;&lt;code&gt;&lt;span&gt;.
 &lt;&#x2F;span&gt;&lt;span&gt;├── LICENSE
 &lt;&#x2F;span&gt;&lt;span&gt;├── Makefile
@@ -224,14 +236,29 @@ RocketOS is a simple operating system which is written in RUST and Assembly.
 &lt;&#x2F;span&gt;&lt;span&gt;├── img
 &lt;&#x2F;span&gt;&lt;span&gt;├── os
 &lt;&#x2F;span&gt;&lt;span&gt;│   ├── src
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── arch            # 架构适配
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── drivers         # 设备驱动
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── ext4            # ext4文件系统
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── fat32           # fat32文件系统
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── fs              # 虚拟文件系统
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── futex           # 快速用户锁
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── mm              # 内存管理
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── net             # 网络模块
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── signal          # 信号机制
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── syscall         # 系统调用
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── task            # 任务控制
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   ├── time            # 时间模块
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   └── main.rs
 &lt;&#x2F;span&gt;&lt;span&gt;│   └── vendor
+&lt;&#x2F;span&gt;&lt;span&gt;├── scripts                 # 辅助脚本
 &lt;&#x2F;span&gt;&lt;span&gt;└── user
 &lt;&#x2F;span&gt;&lt;span&gt;    ├── src
 &lt;&#x2F;span&gt;&lt;span&gt;    └── vendor
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;tools-gou-jian-fang-shi&quot;&gt;🛠️ 构建方式&lt;&#x2F;h2&gt;
+&lt;h1 id=&quot;gou-jian-qi-dong-yu-diao-shi&quot;&gt;构建、启动与调试&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;gou-jian-fang-shi&quot;&gt;构建方式&lt;&#x2F;h2&gt;
 &lt;p&gt;默认会同时构建 RISC-V 和 LoongArch 的内核和用户程序：&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; all
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; kernal
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;构建过程将：&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -239,28 +266,47 @@ RocketOS is a simple operating system which is written in RUST and Assembly.
 &lt;li&gt;构建 RISC-V 和 LoongArch 架构的用户态与内核程序&lt;&#x2F;li&gt;
 &lt;li&gt;生成 &lt;code&gt;kernel-rv&lt;&#x2F;code&gt; 和 &lt;code&gt;kernel-la&lt;&#x2F;code&gt; 两个内核镜像&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;rocket-qi-dong-xi-tong&quot;&gt;🚀 启动系统&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;qi-dong-risc-v-mo-ni-qi&quot;&gt;启动 RISC-V 模拟器：&lt;&#x2F;h3&gt;
+&lt;h2 id=&quot;qi-dong-xi-tong&quot;&gt;启动系统&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;启动 RISC-V 模拟器：&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; run-riscv
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;qi-dong-loongarch-mo-ni-qi&quot;&gt;启动 LoongArch 模拟器：&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;启动 LoongArch 模拟器：&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; run-loongarch
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;beetle-diao-shi-zhi-chi&quot;&gt;🐞 调试支持&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;diao-shi-zhi-chi&quot;&gt;调试支持&lt;&#x2F;h2&gt;
 &lt;p&gt;支持通过 gdb 进行调试：&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; gdbserver    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0a1a7;&quot;&gt;# 启动 QEMU 并开启 GDB 服务
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; gdbclient    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0a1a7;&quot;&gt;# 启动 GDB 客户端
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;broom-qing-li-gou-jian-wen-jian&quot;&gt;🧹 清理构建文件&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;qing-li-gou-jian-wen-jian&quot;&gt;清理构建文件&lt;&#x2F;h2&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#fafafa;color:#383a42;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#e45649;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span&gt; clean
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;hr &#x2F;&gt;
-&lt;h2 id=&quot;sparkles-zhu-yi-shi-xiang&quot;&gt;✨ 注意事项&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;zhu-yi-shi-xiang&quot;&gt;注意事项&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;需要安装 QEMU，且支持 &lt;code&gt;qemu-system-riscv64&lt;&#x2F;code&gt; 和 &lt;code&gt;qemu-system-loongarch64&lt;&#x2F;code&gt;。&lt;&#x2F;li&gt;
 &lt;li&gt;使用了 &lt;code&gt;virtio&lt;&#x2F;code&gt; 设备和多磁盘模拟，请确保 QEMU 版本足够新。&lt;&#x2F;li&gt;
 &lt;li&gt;需要支持交叉编译工具链，如 &lt;code&gt;riscv64-linux-musl-gcc&lt;&#x2F;code&gt; 与 &lt;code&gt;loongarch64-linux-musl-gcc&lt;&#x2F;code&gt;。&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;xiang-mu-can-yu-ren-yuan&quot;&gt;项目参与人员&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;李昕昊（队长）：&lt;&#x2F;strong&gt; 内存管理、文件系统、架构适配&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;翁浩男：&lt;&#x2F;strong&gt; 进程管理、信号机制&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;沈翃宇：&lt;&#x2F;strong&gt; 网络模块&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;指导教师：&lt;&#x2F;strong&gt; 刘国军&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;xiang-guan-lian-jie&quot;&gt;相关链接&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;..&#x2F;media&#x2F;word&#x2F;RocketOS.pdf&quot;&gt;初赛文档&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;..&#x2F;media&#x2F;ppt&#x2F;RocketOS-final.pptx&quot;&gt;演示ppt&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;10S-e04s-O_0hs0z_0eMZtQ&quot;&gt;演示视频&lt;&#x2F;a&gt;  提取码: vnfp&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;can-kao-xiang-mu&quot;&gt;参考项目&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;torvalds&#x2F;linux&quot;&gt;linux&lt;&#x2F;a&gt;  ： RocketOS 中内存管理、文件系统等多个内核模块设计的核心参考基准，符合主流内核架构设计理念。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ChenRuiwei&#x2F;Phoenix&quot;&gt;Phoenix&lt;&#x2F;a&gt; ：提供任务调度与信号机制的设计思路参考&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gitlab.eduxiji.net&#x2F;educg-group-26011-2376549&#x2F;T202410699992496-312&quot;&gt;IMPACT&lt;&#x2F;a&gt; ：架构适配方面的参考项目，针对 LoongArch 架构的适配工作具有启发性。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gitlab.eduxiji.net&#x2F;educg-group-22026-2376550&#x2F;T202410213992712-1533&quot;&gt;MinotaurOS&lt;&#x2F;a&gt; ：参考其文档撰写风格和结构组织方式&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Starry-OS&quot;&gt;Starry&lt;&#x2F;a&gt; ：网络模块的实现参考，具备基础的网络协议与驱动集成。&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;p&gt;欢迎学习和修改本项目，用于教学、研究和实验操作系统开发 🚀&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
