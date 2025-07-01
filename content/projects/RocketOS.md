@@ -10,7 +10,7 @@ taxonomies:
     - Rust
     - OS
 ---
-![alt text](../media/img/hit.png)
+![alt text](../media/hit.png)
 ---
 
 # 🚀 RocketOS
@@ -18,12 +18,12 @@ RocketOS 是一款采用 Rust 语言开发的现代化宏内核操作系统，�
 
 # 初赛成绩
 截至2025-6-30日20点，RocketOS通过除ltp外全部测试点，在实时排行榜中处于榜首，总分共计11720.05
-![alt text](../media/img/score1.png)
-![alt text](../media/img/score2.png)
+![alt text](../media/score1.png)
+![alt text](../media/score2.png)
 
 # RocketOS 内核设计
 
-![alt text](../media/img/RocketOS.drawio.png)
+![alt text](../media/RocketOS.drawio.png)
 
 ## **核心功能实现：**
 - **内存管理：** 提供高效的内存分配和虚拟内存管理机制，采用写时复制（Copy-on-Write）与懒分配（Lazy Allocation）的优化策略，最大化内存资源利用效率，确保系统内存访问的高性能表现
@@ -150,9 +150,9 @@ make clean
 
 # 相关链接
 
-[初赛文档](../media/word/RocketOS.pdf)
+[初赛文档](../media/RocketOS.pdf)
 
-[演示ppt](../media/ppt/RocketOS-final.pptx)
+[演示ppt](../media/RocketOS-final.pptx)
 
 [演示视频](https://pan.baidu.com/s/10S-e04s-O_0hs0z_0eMZtQ )  提取码: vnfp
 
