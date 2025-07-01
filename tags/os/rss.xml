@@ -196,15 +196,15 @@ or &lt;code&gt;BufWriter&lt;&#x2F;code&gt; is used, which are of course not avai
           <author>Unknown</author>
           <link>https://biorelaxa.github.io/projects/rocketos/</link>
           <guid>https://biorelaxa.github.io/projects/rocketos/</guid>
-          <description xml:base="https://biorelaxa.github.io/projects/rocketos/">&lt;h2 id=&quot;alt-text&quot;&gt;&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;hit.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;h2&gt;
+          <description xml:base="https://biorelaxa.github.io/projects/rocketos/">&lt;h2 id=&quot;alt-text&quot;&gt;&lt;img src=&quot;..&#x2F;media&#x2F;hit.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;h2&gt;
 &lt;h1 id=&quot;rocket-rocketos&quot;&gt;🚀 RocketOS&lt;&#x2F;h1&gt;
 &lt;p&gt;RocketOS 是一款采用 Rust 语言开发的现代化宏内核操作系统，支持 &lt;strong&gt;RISC-V&lt;&#x2F;strong&gt; 和 &lt;strong&gt;LoongArch&lt;&#x2F;strong&gt; 架构。该系统从最小内核开始开发，采用同步栈式设计架构，集成了完整的中断处理机制、进程管理系统、内存管理模块、文件系统以及网络协议栈等核心组件，通过系统调用接口为用户程序提供高效可靠的服务支持&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;chu-sai-cheng-ji&quot;&gt;初赛成绩&lt;&#x2F;h1&gt;
 &lt;p&gt;截至2025-6-30日20点，RocketOS通过除ltp外全部测试点，在实时排行榜中处于榜首，总分共计11720.05
-&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;score1.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;
-&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;score2.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;img src=&quot;..&#x2F;media&#x2F;score1.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;
+&lt;img src=&quot;..&#x2F;media&#x2F;score2.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;rocketos-nei-he-she-ji&quot;&gt;RocketOS 内核设计&lt;&#x2F;h1&gt;
-&lt;p&gt;&lt;img src=&quot;..&#x2F;media&#x2F;img&#x2F;RocketOS.drawio.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;media&#x2F;RocketOS.drawio.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;he-xin-gong-neng-shi-xian&quot;&gt;&lt;strong&gt;核心功能实现：&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;内存管理：&lt;&#x2F;strong&gt; 提供高效的内存分配和虚拟内存管理机制，采用写时复制（Copy-on-Write）与懒分配（Lazy Allocation）的优化策略，最大化内存资源利用效率，确保系统内存访问的高性能表现&lt;&#x2F;li&gt;
@@ -298,8 +298,8 @@ or &lt;code&gt;BufWriter&lt;&#x2F;code&gt; is used, which are of course not avai
 &lt;p&gt;&lt;strong&gt;沈翃宇：&lt;&#x2F;strong&gt; 网络模块&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;指导教师：&lt;&#x2F;strong&gt; 刘国军&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;xiang-guan-lian-jie&quot;&gt;相关链接&lt;&#x2F;h1&gt;
-&lt;p&gt;&lt;a href=&quot;..&#x2F;media&#x2F;word&#x2F;RocketOS.pdf&quot;&gt;初赛文档&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;..&#x2F;media&#x2F;ppt&#x2F;RocketOS-final.pptx&quot;&gt;演示ppt&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;..&#x2F;media&#x2F;RocketOS.pdf&quot;&gt;初赛文档&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;..&#x2F;media&#x2F;RocketOS-final.pptx&quot;&gt;演示ppt&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;10S-e04s-O_0hs0z_0eMZtQ&quot;&gt;演示视频&lt;&#x2F;a&gt;  提取码: vnfp&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;can-kao-xiang-mu&quot;&gt;参考项目&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;torvalds&#x2F;linux&quot;&gt;linux&lt;&#x2F;a&gt;  ： RocketOS 中内存管理、文件系统等多个内核模块设计的核心参考基准，符合主流内核架构设计理念。&lt;&#x2F;p&gt;
