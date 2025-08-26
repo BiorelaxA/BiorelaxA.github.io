@@ -4,7 +4,7 @@ title: "About"
 
 ### Hi there 👋 I'm Hongyu Shen. An undergraduate student in Harbin Institute of Technology.
 
-- 🌱 I’m currently learning nlp,ml and rust in os,right now I'm a member in an os project [os](https://github.com/li041/RocketOS) .
+- 🌱 I’m currently learning nlp,ml and rust in os,right now I'm a member in an os project [os](https://github.com/li041/RocketOS-mirror) .
 - 💬 Ask me anything [here](https://github.com/BiorelaxA/BiorelaxA/issues).
 - 📫 How to reach me: [Email](mailto:peterluck2021@163.com)
 - 🐯 My GitHub [Overview](https://github.com/BiorelaxA) 

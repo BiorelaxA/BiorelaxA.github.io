@@ -3,7 +3,7 @@ title: RocketOS
 date: 2025-02-11T11:35:41.496Z
 extra:
   featured: true
-  link: https://github.com/BiorelaxA/RocketOS
+  link: https://github.com/li041/RocketOS-mirror
 description: "RocketOS 是一个支持 **RISC-V** 与 **LoongArch** 架构的宏内核操作系统项目，支持基本内核功能、用户态程序运行、文件系统、网络、VirtIO 设备等内容。"
 taxonomies:
   tags:
@@ -16,10 +16,11 @@ taxonomies:
 # 🚀 RocketOS
 RocketOS 是一款采用 Rust 语言开发的现代化宏内核操作系统，支持 **RISC-V** 和 **LoongArch** 架构。该系统从最小内核开始开发，采用同步栈式设计架构，集成了完整的中断处理机制、进程管理系统、内存管理模块、文件系统以及网络协议栈等核心组件，通过系统调用接口为用户程序提供高效可靠的服务支持
 
-# 初赛成绩
-截至2025-6-30日20点，RocketOS通过除ltp外全部测试点，在实时排行榜中处于榜首，总分共计11720.05
-![alt text](../media/score1.png)
-![alt text](../media/score2.png)
+
+# 比赛成绩
+截至2025-8-22，**RocketOS作为哈尔滨工业大学火箭队在全国大学生操作系统比赛内核设计赛中斩获全国第一的成绩**
+
+[公示](https://os.educg.net/?token=8ALnHkh6Shm6pVyQzHwzyqDCw7MvmUZlCVwZ3T0Q7T#/index?TYPE=2025OS_K)
 
 # RocketOS 内核设计
 
