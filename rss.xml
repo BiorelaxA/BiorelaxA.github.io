@@ -191,6 +191,20 @@ or &lt;code&gt;BufWriter&lt;&#x2F;code&gt; is used, which are of course not avai
 </description>
       </item>
       <item>
+          <title>vf2-gmac-driver</title>
+          <pubDate>Mon, 28 Apr 2025 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://biorelaxa.github.io/opensource/vf2-driver/</link>
+          <guid>https://biorelaxa.github.io/opensource/vf2-driver/</guid>
+          <description xml:base="https://biorelaxa.github.io/opensource/vf2-driver/">&lt;h1 id=&quot;vf2-gmac-driver&quot;&gt;vf2-gmac-driver&lt;&#x2F;h1&gt;
+&lt;p&gt;visionfive2 gmac driver according to rthread gmac driver,这里是visionfive2 星光二代开发板网卡驱动，驱动基于linux,rthread进行开发。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;ru-he-gua-pei&quot;&gt;如何适配&lt;&#x2F;h1&gt;
+&lt;p&gt;驱动适配首先需要依据设备树搜索到网卡信息并拿到网卡地址，之后根据os设计适配platform即可。我们在自己的os上已经成功适配了这个驱动https:&#x2F;&#x2F;github.com&#x2F;li041&#x2F;RocketOS&#x2F;并通过了git ,curl测试，您可以参考我们的设计。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;zhu-yi&quot;&gt;注意&lt;&#x2F;h1&gt;
+&lt;p&gt;驱动并没有实现中断设计，我们依然采用的是轮询设计，欢迎任何PR和ISSUE&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
           <title>RocketOS</title>
           <pubDate>Tue, 11 Feb 2025 11:35:41 +0000</pubDate>
           <author>Unknown</author>
@@ -199,10 +213,9 @@ or &lt;code&gt;BufWriter&lt;&#x2F;code&gt; is used, which are of course not avai
           <description xml:base="https://biorelaxa.github.io/projects/rocketos/">&lt;h2 id=&quot;alt-text&quot;&gt;&lt;img src=&quot;..&#x2F;media&#x2F;hit.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;h2&gt;
 &lt;h1 id=&quot;rocket-rocketos&quot;&gt;🚀 RocketOS&lt;&#x2F;h1&gt;
 &lt;p&gt;RocketOS 是一款采用 Rust 语言开发的现代化宏内核操作系统，支持 &lt;strong&gt;RISC-V&lt;&#x2F;strong&gt; 和 &lt;strong&gt;LoongArch&lt;&#x2F;strong&gt; 架构。该系统从最小内核开始开发，采用同步栈式设计架构，集成了完整的中断处理机制、进程管理系统、内存管理模块、文件系统以及网络协议栈等核心组件，通过系统调用接口为用户程序提供高效可靠的服务支持&lt;&#x2F;p&gt;
-&lt;h1 id=&quot;chu-sai-cheng-ji&quot;&gt;初赛成绩&lt;&#x2F;h1&gt;
-&lt;p&gt;截至2025-6-30日20点，RocketOS通过除ltp外全部测试点，在实时排行榜中处于榜首，总分共计11720.05
-&lt;img src=&quot;..&#x2F;media&#x2F;score1.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;
-&lt;img src=&quot;..&#x2F;media&#x2F;score2.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;bi-sai-cheng-ji&quot;&gt;比赛成绩&lt;&#x2F;h1&gt;
+&lt;p&gt;截至2025-8-22，&lt;strong&gt;RocketOS作为哈尔滨工业大学火箭队在全国大学生操作系统比赛内核设计赛中斩获全国第一的成绩&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;os.educg.net&#x2F;?token=8ALnHkh6Shm6pVyQzHwzyqDCw7MvmUZlCVwZ3T0Q7T#&#x2F;index?TYPE=2025OS_K&quot;&gt;公示&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;rocketos-nei-he-she-ji&quot;&gt;RocketOS 内核设计&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;img src=&quot;..&#x2F;media&#x2F;RocketOS.drawio.png&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;he-xin-gong-neng-shi-xian&quot;&gt;&lt;strong&gt;核心功能实现：&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
